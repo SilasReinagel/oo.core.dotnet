@@ -1,8 +1,14 @@
-﻿
+﻿using OO.Core.Logic;
+
 namespace OO.Core.Types
 {
-    public interface Condition
+    public abstract class Condition
     {
-        bool Evaluate();
+        public abstract bool Evaluate();
+
+        public static implicit operator Condition(bool evaluatedCondition)
+        {
+            return new BooleanCondition(evaluatedCondition);
+        }
     }
 }

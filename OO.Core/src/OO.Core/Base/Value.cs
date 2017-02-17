@@ -1,8 +1,15 @@
-﻿
+﻿using System;
+using OO.Core.Base;
+
 namespace OO.Core.Types
 {
-    public interface Value<out T>
+    public abstract class Value<T>
     {
-        T Get();
+        public abstract T Get();
+
+        public static implicit operator Value<T>(Func<T> function)
+        {
+            return new FunctionValue<T>(function);
+        }
     }
 }
