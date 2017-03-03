@@ -4,7 +4,7 @@ namespace OO.Core.Types
 {
     public abstract class Number
     {
-        protected abstract decimal AsReal();
+        public abstract decimal AsReal();
 
         public sealed override string ToString()
         {
@@ -131,6 +131,16 @@ namespace OO.Core.Types
         public static implicit operator Number(decimal number)
         {
             return new DecimalNumber(number);
+        }
+
+        public static Number operator +(Number num1, Number num2)
+        {
+            return new Sum(num1, num2);
+        }
+
+        public static Number operator *(Number num1, Number num2)
+        {
+            return new Product(num1, num2);
         }
     }
 }
