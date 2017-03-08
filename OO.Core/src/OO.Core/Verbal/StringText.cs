@@ -1,5 +1,5 @@
 ﻿
-namespace OO.Core.Text
+namespace OO.Core.Verbal
 {
     internal sealed class StringText : Types.Text
     {

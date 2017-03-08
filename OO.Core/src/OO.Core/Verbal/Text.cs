@@ -1,4 +1,4 @@
-﻿using OO.Core.Text;
+﻿using OO.Core.Verbal;
 
 namespace OO.Core.Types
 {
@@ -6,7 +6,7 @@ namespace OO.Core.Types
     {
         public abstract override string Get();
 
-        public new string ToString()
+        public sealed override string ToString()
         {
             return Get();
         }
