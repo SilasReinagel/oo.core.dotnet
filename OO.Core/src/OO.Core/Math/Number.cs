@@ -4,11 +4,11 @@ namespace OO.Core.Types
 {
     public abstract class Number
     {
-        protected abstract decimal AsReal();
+        public abstract decimal AsDecimal();
 
         public sealed override string ToString()
         {
-            return AsReal().ToString();
+            return AsDecimal().ToString();
         }
 
         public sealed override bool Equals(object other)
@@ -18,19 +18,24 @@ namespace OO.Core.Types
             return other is Number ? Equals((Number) other) : false;
         }
 
+        public static Number Parse(Text text)
+        {
+            return new DecimalNumber(decimal.Parse(text.ToString()));
+        }
+
         public sealed override int GetHashCode()
         {
-            return AsReal().GetHashCode();
+            return AsDecimal().GetHashCode();
         }
 
         public bool Equals(int other)
         {
-            return ((int) AsReal()) == other;
+            return ((int) AsDecimal()) == other;
         }
 
         private bool Equals(Number other)
         {
-            return AsReal() == other.AsReal();
+            return AsDecimal() == other.AsDecimal();
         }
 
         public static bool operator ==(Number first, Number second)
@@ -43,49 +48,54 @@ namespace OO.Core.Types
             return !Equals(first, second);
         }
 
+        public static Number operator +(Number first, Number second)
+        {
+            return first.AsDecimal() +  second.AsDecimal();
+        }
+
         public static implicit operator short(Number number)
         {
-            return (short) number.AsReal();
+            return (short) number.AsDecimal();
         }
 
         public static implicit operator ushort(Number number)
         {
-            return (ushort) number.AsReal();
+            return (ushort) number.AsDecimal();
         }
 
         public static implicit operator int(Number number)
         {
-            return (int) number.AsReal();
+            return (int) number.AsDecimal();
         }
 
         public static implicit operator uint(Number number)
         {
-            return (uint) number.AsReal();
+            return (uint) number.AsDecimal();
         }
 
         public static implicit operator long(Number number)
         {
-            return (long) number.AsReal();
+            return (long) number.AsDecimal();
         }
 
         public static implicit operator ulong(Number number)
         {
-            return (ulong) number.AsReal();
+            return (ulong) number.AsDecimal();
         }
 
         public static implicit operator float(Number number)
         {
-            return (float) number.AsReal();
+            return (float) number.AsDecimal();
         }
 
         public static implicit operator double(Number number)
         {
-            return (double) number.AsReal();
+            return (double) number.AsDecimal();
         }
 
         public static implicit operator decimal(Number number)
         {
-            return number.AsReal();
+            return number.AsDecimal();
         }
 
         public static implicit operator Number(short number)

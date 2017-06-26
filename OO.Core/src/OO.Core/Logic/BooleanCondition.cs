@@ -2,7 +2,7 @@
 
 namespace OO.Core.Logic
 {
-    internal sealed class BooleanCondition : Condition
+    public sealed class BooleanCondition : Condition
     {
         private readonly bool _evaluatedCondition;
 

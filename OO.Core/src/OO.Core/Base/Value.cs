@@ -11,5 +11,10 @@ namespace OO.Core.Types
         {
             return new FunctionValue<T>(function);
         }
+
+        public static implicit operator T(Value<T> value)
+        {
+            return value.Get();
+        }
     }
 }

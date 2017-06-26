@@ -2,11 +2,11 @@
 
 namespace OO.Core.Verbal
 {
-    public class NumberText : Text
+    public sealed class NumberAsText : Text
     {
         private readonly Number _number;
 
-        public NumberText(Number number)
+        public NumberAsText(Number number)
         {
             _number = number;
         }

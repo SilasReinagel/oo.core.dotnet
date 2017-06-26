@@ -11,7 +11,7 @@ namespace OO.Core.Math
             _value = value;
         }
 
-        protected override decimal AsReal()
+        public override decimal AsDecimal()
         {
             return _value;
         }

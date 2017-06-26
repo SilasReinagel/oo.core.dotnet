@@ -15,5 +15,10 @@ namespace OO.Core.Types
         {
             return new StringText(text);
         }
+
+        public static implicit operator string(Text text)
+        {
+            return text.Get();
+        }
     }
 }

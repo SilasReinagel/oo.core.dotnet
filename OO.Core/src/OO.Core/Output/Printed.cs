@@ -2,12 +2,12 @@
 
 namespace OO.Core.Output
 {
-    public class Printed : Work
+    public sealed class PrintedText : Work
     {
         private readonly Text _text;
-        private readonly Media _media;
+        private readonly Media<Text> _media;
 
-        public Printed(Text text, Media media)
+        public PrintedText(Text text, Media<Text> media)
         {
             _text = text;
             _media = media;

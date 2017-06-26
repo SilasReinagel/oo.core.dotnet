@@ -2,18 +2,18 @@
 
 namespace OO.Core.Math
 {
-    public class TextNumber : Number
+    public class TextAsNumber : Number
     {
         private readonly Text _text;
 
-        public TextNumber(Text text)
+        public TextAsNumber(Text text)
         {
             _text = text;
         }
 
-        protected override decimal AsReal()
+        public override decimal AsDecimal()
         {
-            return decimal.Parse(_text.Get());
+            return Parse(_text);
         }
     }
 }

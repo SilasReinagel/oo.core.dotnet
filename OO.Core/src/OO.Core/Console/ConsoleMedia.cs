@@ -3,7 +3,7 @@ using OO.Core.Types;
 
 namespace OO.Core.Console
 {
-    public class ConsoleMedia : Media
+    public sealed class ConsoleMedia : Media<Text>
     {
         public override void Print(Text text)
         {

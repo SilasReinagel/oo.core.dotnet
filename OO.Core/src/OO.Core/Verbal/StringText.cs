@@ -1,7 +1,8 @@
-﻿
+﻿using OO.Core.Types;
+
 namespace OO.Core.Verbal
 {
-    internal sealed class StringText : Types.Text
+    public sealed class StringText : Text
     {
         private readonly string _value;
 
